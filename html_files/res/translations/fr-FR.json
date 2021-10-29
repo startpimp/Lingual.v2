@@ -92,6 +92,8 @@
 	"component.type.indefinite-article": "article indéfini",
 	"component.type.pronoun": "pronom",
 	"component.type.cardinal-adjective": "adjectif cardinal",
+	"component.type.interjection": "interjection", 
+
 
 	"?comment": "Languages' translation",
 	"lang.all": "Toutes les langues",
