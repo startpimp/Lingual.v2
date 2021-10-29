@@ -13,3 +13,7 @@ node ./index.js -u
 ```
 
 If you want to use a custom database, modify de model (`./packets/mysql/lingual.sql`) and the already completed SQL (`./packets/mysql/exported.sql`)
+
+## Visibility
+
+Lingual is visible, not only on the host, but also in your entire local network. Once Lingual is launched, you can you use it, no matter which device, as soon as it have an internet browser and if it is connected to the same router.
