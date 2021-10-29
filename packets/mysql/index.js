@@ -1,5 +1,5 @@
 const MYSQL = require("mysql")
-const FS = require("fs")
+const FS = require("fs/promises")
 
 const POOL = MYSQL.createPool({
 	host: "localhost",
@@ -8,7 +8,7 @@ const POOL = MYSQL.createPool({
 	database: "lingual"
 });
 
-async function tryCreate() {
+async function tryCreate(useACD) {
 	const CON = MYSQL.createConnection({
 		host: "localhost",
 		user: "lingual_website",
@@ -16,14 +16,13 @@ async function tryCreate() {
 		multipleStatements: true
 	});
 
-	await CON.connect(err => {
-		FS.readFile("./packets/mysql/lingual.sql", async (err, data) => {
-			await CON.query(data.toString(), (err, result) => {
-				if(err) console.error(err);
-				console.log("Databases created!")
-			});
-		});
-	});
+	await CON.connect();
+
+	const PATH = useACD ? "./packets/mysql/exported.sql" : "./packets/mysql/lingual.sql"
+
+	let DATA = await FS.readFile(PATH);
+	await CON.query(DATA.toString());
+	console.log("Databases created!")
 }
 
 /* simplification */

@@ -11,8 +11,6 @@ const FS = require("fs")
 const LANG = require("./packets/lang/index.js")
 const MYSQL = require("./packets/mysql/index.js")
 
-MYSQL.tryCreate();
-
 /*
  *  Redirection factory
  */
@@ -127,9 +125,14 @@ APP.get('/js/*', (req, res) => {
 });
 
 // Starts the server (HTTPS)
-const HTTPS = require("https").Server(SERVER.SERVER_OPTIONS, APP)
-const SERVER_INSTANCE = SERVER.createServer(HTTPS, APP)
-SERVER.createListeners(SERVER_INSTANCE)
-APP.listen(SERVER.PROPERTIES.port, () => {
-	console.log(`Server has start : https://${SERVER.PROPERTIES.ip}:${SERVER.PROPERTIES.port}`)
-})
+async function start() {
+	await MYSQL.tryCreate(process.argv[2] == "-u" ? true : false);
+	const HTTPS = require("https").Server(SERVER.SERVER_OPTIONS, APP)
+	const SERVER_INSTANCE = SERVER.createServer(HTTPS, APP)
+	SERVER.createListeners(SERVER_INSTANCE)
+	APP.listen(SERVER.PROPERTIES.port, () => {
+		console.log(`Server has start : https://${SERVER.PROPERTIES.ip}:${SERVER.PROPERTIES.port}`)
+	});
+}
+
+start()
