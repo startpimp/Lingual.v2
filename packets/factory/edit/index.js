@@ -57,6 +57,7 @@ async function run(req, res) {
 		var added_pronunciations_html = ""
 		for(var index = 0; index < C_PRONUNCIATIONS.length; index++) {
 			added_pronunciations_html += await FACTORY.get("aec.added-pronunciations", "html", {
+				index,
 				language: C_PRONUNCIATIONS[index][0],
 				api: C_PRONUNCIATIONS[index][1]
 			});

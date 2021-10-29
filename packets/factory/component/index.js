@@ -88,7 +88,7 @@ async function run(req, res) {
 		let TRANSLATIONS_CONTAINER_HTML = await FACTORY.get("component.translations-container", "html", {
 			translations: ins_translations_html
 		});
-		main_page = main_page.replace("<?set:translations?>", TRANSLATIONS_CONTAINER_HTML)
+		if(ins_translations_html != "") main_page = main_page.replace("<?set:translations?>", TRANSLATIONS_CONTAINER_HTML);
 	}
 
 	// Definitions
@@ -105,7 +105,7 @@ async function run(req, res) {
 		let DEFINITIONS_CONTAINER_HTML = await FACTORY.get("component.definitions-container", "html", {
 			definitions: ins_definitions_html
 		});
-		main_page = main_page.replace("<?set:definitions?>", DEFINITIONS_CONTAINER_HTML)
+		if(ins_definitions_html != "") main_page = main_page.replace("<?set:definitions?>", DEFINITIONS_CONTAINER_HTML);
 	}
 
 	main_page = main_page.replace(/\$\(language\)/gm, COMPONENT.language.code)

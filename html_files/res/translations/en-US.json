@@ -98,7 +98,7 @@
 	"component.type.indefinite-feminine-plural-pronoun": "indefinite feminine plural pronoun",
 	"component.type.masculine-singular-common-noun": "masculine singular common noun",
 	"component.type.feminine-plural-common-noun": "feminine plural common noun",
-	"component.type.feminine-singular-common-noun": "feminine plural common noun",
+	"component.type.feminine-singular-common-noun": "feminine singular common noun",
 
 	"?comment": "Languages' translation",
 	"lang.all": "All languages",
@@ -110,5 +110,6 @@
 	"lang.ko-KP": "North Korean",
 	"lang.de-DE": "German (Germany)",
 	"lang.zh-CN": "Simplified Chinese",
-	"lang.fr-CA": "French (Canada)"
+	"lang.fr-CA": "French (Canada)",
+	"lang.zh-TW": "Traditional Chinese"
 }
