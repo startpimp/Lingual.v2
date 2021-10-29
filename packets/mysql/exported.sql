@@ -18,6 +18,7 @@
 --
 -- Table structure for table `components`
 --
+USE `lingual`;
 
 DROP TABLE IF EXISTS `components`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
