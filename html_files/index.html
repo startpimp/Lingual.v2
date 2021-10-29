@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="$(user-language)">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>$[home.title]</title>
+		<link rel="stylesheet" type="text/css" href="./css/main">
+		<link rel="stylesheet" type="text/css" href="./css/index">
+	</head>
+	<body>
+		<div id="headband_hb">
+			<p id="hb-title_hbt">Lingual</p>
+		</div>
+		<div id="searchContainer_sc">
+			<p id="sc-title_sct">$[home.text.search]</p>
+			<form method="GET" action="./">
+				<input type="hidden" name="s" value="t">
+				<span class="sc-bigger_scb">$[home.text.origin]</span>
+				<select name="origin">
+					<?set:languages?>
+				</select>
+				<div id="cc_checkboxes">
+					<span class="sc-bigger_scb">$[home.text.class]</span>
+					<?set:component-classes?>
+				</div>
+				<span class="sc-bigger_scb">$[home.text.contains]</span>
+				<input type="text" name="contains">
+				<button>$[home.text.search]</button>
+			</form>
+		</div>
+		<div id="cc_container">
+			<div id="buttonsContainer_bc">
+				<div class="bc-selector_bcs">
+					<?set:containers?>
+				</div>
+				<div class="bc-selector_bcs">
+					<?set:containers-nd?>
+				</div>
+			</div>
+			<div id="wordContainer_wc">
+				<?set:components?>
+			</div>
+			<div id="pages_p">
+				<a class="p-box_pb" href="./$(queries)$(min-query)">1</a>
+				<a class="p-box_pb p-arrow_pa" href="./$(queries)$(de-query)"><</a>
+				<p class="p-box_pb" id="p-actual_pa">$(act-number)</p>
+				<a class="p-box_pb p-arrow_pa" href="./$(queries)$(in-query)">></a>
+				<a class="p-box_pb" href="./$(queries)$(max-query)">$(max-number)</a>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	const W_HEIGHT = window.innerHeight
+	const W_WIDTH = document.querySelector("#headband_hb").offsetWidth
+	const H_HEIGHT = document.querySelector("#headband_hb").offsetHeight
+	const H_WIDTH = document.querySelector("#searchContainer_sc").offsetWidth
+	const D_HEIGHT = W_HEIGHT - H_HEIGHT - 30
+	const D_WIDTH = W_WIDTH - H_WIDTH - 15
+	document.querySelector("#searchContainer_sc").style.height = `${D_HEIGHT}px`
+	document.querySelector("#cc_container").style.maxWidth = `${D_WIDTH}px`
+
+
+	function goto(component, language, type) {
+		window.location.href = `./component/${component}?l=${language}&t=${type}`
+	}
+
+	function gotoLanguage(language) {
+		if(language != "all") window.location.href = `./?l=${language}`;
+		else window.location.href = "./";
+	}
+
+	function gotoAdd(type) {
+		window.location.href = `./add?t=${type}`
+	}
+</script>

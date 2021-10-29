@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="$(user-language)">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>$[ufc.title] – $(component)</title>
+		<link rel="stylesheet" type="text/css" href="./css/main">
+		<link rel="stylesheet" type="text/css" href="./css/ufc">
+	</head>
+	<body>
+		<div id="headband_hb">
+			<p id="hb-title_hbt">$(component)</p>
+		</div>
+		<div id="buttonsContainer_bc">
+			<a class="bc-defaultButton_bcdb" href="../">$[component.button.home]</a>
+			<a class="bc-defaultButton_bcdb" href="../cba?c=$(component)&l=$(language)&t=$(type)">$[ufc.button.addit]</a>
+		</div>
+		<div id="wordContainer_wc">
+			<p id="wc-component_wcc">$(component)</p>
+			<p id="wc-type_wct">$[component.class.$(type)]</p>
+			<p id="wc-language_wcl">$[lang.$(language)]</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="$(user-language)">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>$[component.class.$(type)] – $(component)</title>
+		<link rel="stylesheet" type="text/css" href="../css/main">
+		<link rel="stylesheet" type="text/css" href="../css/component">
+	</head>
+	<body>
+		<!-- Creating styles depending on the language used --> 
+		<style type="text/css">
+			.wct-commaType_wctct::after, #wct-andType_wctat::after {
+				color: var(--l-middle-grey);
+				font-style: normal;
+			}
+
+			.wct-commaType_wctct::after {
+				content: '$[component.punctuation.comma]';
+			}
+
+			#wct-andType_wctat::after {
+				content: '$[component.text.and]';
+			}
+
+			 #wc-reading_wcr::before {
+			 	content: '$[component.text.reading]';
+			 	color: var(--l-dark-grey);
+			 	font-weight: bold;
+			 }
+		</style>
+		<div id="headband_hb">
+			<p id="hb-title_hbt" lang="$(language)">$(component)</p>
+		</div>
+		<div id="buttonsContainer_bc">
+			<a class="bc-defaultButton_bcdb" href="../">$[component.button.home]</a>
+			<a class="bc-defaultButton_bcdb" href="../edit?c=$(component)&l=$(language)&t=$(type)">$[aec.text.edit]</a>
+			<a class="bc-defaultButton_bcdb" id="bc-redButton_bccb" href="../removeit?c=$(component)&l=$(language)&t=$(type)">$[component.text.remove]</a>
+		</div>
+		<div id="wordContainer_wc">
+			<p id="wc-word_wcw" lang="$(language)" $(typed-class)>$(component)</p>
+			<?set:api-language?>
+			<div id="wc-types_wct">
+				<?set:types?>
+			</div>
+			<?set:reading?>
+			<?set:pronunciations?>
+		</div>
+		<div id="otherContainer_oc">
+			<?set:translations?>
+			<?set:definitions?>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="$(user-language)">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>$[$(page).$(type).title]</title>
+		<link rel="stylesheet" type="text/css" href="./css/main">
+		<link rel="stylesheet" type="text/css" href="./css/aec">
+	</head>
+	<body>
+		<div id="headband_hb">
+			<p id="hb-title_hbt">$[$(page).$(type).minititle]</p>
+		</div>
+		<div id="buttonsContainer_bc">
+			<a class="bc-defaultButton_bcdb" id="bc-redButton_bccb" href="$(url2)">$[aec.cancel]</a>
+		</div>
+		<div id="inputsContainer_ic">
+			<form class="ic-box_icb" method="GET" action="$(url)">
+				<span>$[$(page).text.$(type)]</span>
+				<input $(typed-id) type="text" name="component" required value="$(component)">
+				<span>$[aec.text.origin-nd]</span>
+				<select name="origin">
+					<?set:languages?>
+				</select>
+				<?set:types-input?>
+				<?set:reading?>
+
+				<!-- Hiddens  -->
+				<input type="hidden" name="types_hidden" value="">
+				<?set:hidden-definitions?>
+				<?set:hidden-translations?>
+				<?set:hidden-pronunciations?>
+				<?set:more-hiddens?>
+
+				<button>$[aec.text.save]</button>
+			</form>
+			<div class="ic-box_icb">
+				<?set:pronunciations-based?>
+				<?set:translations-based?>
+				<?set:definitions-based?>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	const LANGUAGES = <?set:codes?>;
+
+	Array.fromIterator = iterator => {
+		r = []
+		for(let d of iterator) {
+			r.push(d)
+		}
+		return r;
+	}
+
+	// types
+	const HIDDEN_TYPES_INPUT = document.querySelector('input[name="types_hidden"]')
+	HIDDEN_TYPES_INPUT.value = JSON.stringify($(hidden_types))
+	<?set:js-types?>
+
+	// Translations 
+	<?set:js-translations?>
+
+	// Definitions
+	<?set:js-definitions?>
+
+	// Pronunciations 
+	<?set:js-pronunciations?>
+</script>

@@ -1,0 +1,19 @@
+#wc-component_wcc {
+	font-size: 25px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+#wc-type_wct {
+	margin-left: 5px;
+	display: inline-block;
+	color: var(--l-blue);
+	font-style: italic;
+}
+
+#wc-language_wcl {
+	color: var(--l-dark-grey);
+	font-size: 14px;
+	margin-top: 4px;
+	margin-left: 7px;
+}

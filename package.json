@@ -1,0 +1,19 @@
+{
+  "name": "tchatboty_v2",
+  "version": "2.0.0",
+  "description": "A LAN project to talk with everyone in the same network",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Bouchon Stanyslas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "ip": "^1.1.5",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.2.0"
+  }
+}

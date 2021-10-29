@@ -1,0 +1,104 @@
+/* Default */
+:root {
+	--l-green: #2BE881;
+	--l-dark-green: #1EdA74;
+	--l-red: #FF3355;
+	--l-glass-red: #FF335577;
+	--l-dark-red: #F1183C;
+	--l-blue: #7294FF;
+	--l-grey: #F5F5F5;
+	--l-middle-hover-grey: #E6E6E6;
+	--l-middle-grey: #D7D7D7;
+	--l-dark-grey: #B9B9B9;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+/* Header */
+#headband_hb {
+	background-color: var(--l-blue);
+	padding: 50px 0;
+}
+
+#hb-title_hbt {
+	color: white;
+	font-size: 55px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Buttons */
+#buttonsContainer_bc {
+	padding: 5px;
+	margin-top: 7px;
+}
+
+.bc-defaultButton_bcdb {
+	background-color: var(--l-middle-hover-grey);
+	padding: 7px;
+	border-radius: 5px;
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.bc-defaultButton_bcdb:hover {
+	background-color: var(--l-middle-grey);
+}
+
+/* Words */
+#wordContainer_wc {
+	padding: 15px;
+}
+
+#bc-redButton_bccb {
+	background-color: var(--l-red);
+	color: white;
+}
+
+#bc-redButton_bccb:hover {
+	background-color: var(--l-dark-red);
+}
+
+#ty-api_tya, .ty-api_tya {
+	font-family: monospace;
+}
+
+span, input, select {
+	display: block;
+}
+
+input, select, option {
+	border: unset;
+	outline: unset;
+	background-color: var(--l-middle-hover-grey);
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 15px;
+	margin-top: 2px;
+	margin-right: 15px;
+}
+
+input[required], select[required] {
+	border-right: 2px solid var(--l-dark-red);
+}
+
+button {
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid var(--l-middle-grey);
+	padding: 5px;
+	background-color: var(--l-grey);
+	cursor: pointer;
+	font-size: 17px;
+}
+
+button:hover {
+	background-color: var(--l-middle-hover-grey);
+	border: 1px solid var(--l-dark-grey);
+}

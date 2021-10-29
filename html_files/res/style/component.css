@@ -1,0 +1,123 @@
+#wc-word_wcw {
+	font-size: 25px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+#wc-types_wct {
+	display: inline-block;
+}
+
+.wct-type_wctt {
+	display: inline-block;
+	color: var(--l-blue);
+	font-style: italic;
+}
+
+#wc-pronunciations_wcp {
+	margin-top: 7px;
+	margin-left: 15px;
+}
+
+.wcp-pronunciation_wcpp {
+	margin-bottom: 15px;
+}
+
+.wcpp-language_wcppl, .wc-language_wcl {
+	color: var(--l-dark-grey);
+	font-size: 12px;
+}
+
+.wcpp-api_wcppa {
+	font-family: monospace;
+	font-weight: bold;
+}
+/* CSS3 compatibility */
+.wcpp-api_wcppa::after, .wcpp-api_wcppa::before {
+	content:  '/';
+}
+
+/* CSS2 compatibility */
+.wcpp-api_wcppa:after, .wcpp-api_wcppa:before {
+	content:  '/';
+}
+
+#wordContainer_wc, #otherContainer_oc {
+	display: inline-block;
+}
+
+#wordContainer_wc {
+	float: left;
+}
+
+#otherContainer_oc {
+	padding: 15px;
+	margin-right: 50px;
+	float: right;
+	min-width: 500px;
+	max-width: 700px;
+}
+
+#oc-translations_oct {
+	margin-bottom: 25px;
+}
+
+#oct-title_octt, #ocd-title_ocdt {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.oct-translation_octt, .ocd-definition_ocdd {
+	padding-left: 15px;
+	margin-top: 7px;
+	padding-bottom: 2px;
+}
+
+.octt-type_octtt, .ocdd-type_ocddt {
+	color: var(--l-blue);
+	font-style: italic;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.octt-translation_octtt, .octt-example_octte, .ocdd-definition_ocddd, .ocdd-example_ocdde {
+	margin-left: 5px;
+	font-size: 15px;
+}
+
+.octt-example_octte, .ocdd-example_ocdde {
+	color: var(--l-dark-grey);
+	font-style: italic;
+}
+
+/* CSS3 compatibility */
+.octt-example_octte::before, .ocdd-example_ocdde::before {
+	content: '– ';
+}
+
+
+/* CSS2 compatibility */
+.octt-example_octte:before, .ocdd-example_ocdde:before {
+	content: '– ';
+	border: ;
+}
+
+@media only screen and (max-width:  958px) {
+	#otherContainer_oc {
+		min-width: 0;
+		max-width: auto;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#wordContainer_wc, #otherContainer_oc {
+		display: block;
+	}
+
+	#otherContainer_oc {
+		float: left;
+		margin-right: 0px;
+		min-width: 0;
+		max-width: auto;
+	}
+}

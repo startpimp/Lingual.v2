@@ -1,0 +1,122 @@
+#inputsContainer_ic {
+	padding: 15px;
+}
+
+input[name="types"], #ic-types_ict {
+	display: block;
+}
+
+#ic-types_ict {
+	max-width: 200px;
+}
+
+.ict-type_ictt {
+	border-radius: 5px;
+	background-color: var(--l-middle-hover-grey);
+	padding: 5px;
+	font-size: 13px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+#ic-api_ica {
+	font-family: monospace;
+}
+
+.ic-sub_ics {
+	font-size: 12px;
+}
+
+.ic-box_icb {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 25px;
+}
+
+.icbt-translation_icbtt, .icbaap-pronunciation_icpbaapp, .icbda-definition_icbdad {
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 7px;
+	cursor: pointer;
+}
+
+.icbt-translation_icbtt:hover, .icbaap-pronunciation_icpbaapp:hover, .icbda-definition_icbdad:hover {
+	background-color: var(--l-grey);
+}
+
+.icbtt-context_icbttc {
+	color: var(--l-blue);
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20px;
+	margin-bottom: 2px;
+}
+
+.icbtt-example_icbtte::before, .icbtt-example_icbtte:before {
+	content: '– ';
+}
+
+.icbtt-example_icbtte {
+	color: var(--l-dark-grey);
+	font-size: 14px;
+	font-style: italic;
+}
+
+.icbtf-container_icbtfc {
+	display: inline-block;
+}
+
+.icbtf-button_icbtfb {
+	display: block;
+}
+
+#icb-translationsAdder_icbt, #icb-pronunciationsAdder_icbpa {
+	margin-bottom: 15px;
+}
+
+.icb-title_icbt {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.icpbaapp-origin_icpbaappo {
+	font-size: 12px;
+	color: var(--l-dark-grey);
+}
+
+.icpbaapp-pronunciation_icpbaappp {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+.icpbaapp-pronunciation_icpbaappp::before, .icpbaapp-pronunciation_icpbaappp::after {
+	content: '/';
+}
+
+.icpbaapp-pronunciation_icpbaappp:before, .icpbaapp-pronunciation_icpbaappp:after {
+	content: '/';
+}
+
+input[name="pronunciation"] {
+	font-family: monospace;
+}
+
+#icbpa-error_icpbae {
+	border-radius: 5px;
+	color: var(--l-red);
+	background-color: var(--l-glass-red);
+	padding: 7px;
+	font-weight: bold;
+	border: 1px solid;
+	font-size: 15px;
+}
+
+#icbpa-error_icpbae > p {
+	display: inline-block;
+	color: var(--l-dark-red);
+	font-family: monospace;
+}
