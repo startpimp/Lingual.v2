@@ -202,3 +202,29 @@ input[type="text"], select {
 	font-weight: bold;
 	background-color: var(--l-blue);
 }
+
+@media only screen and (max-width: 768px) {
+	#searchContainer_sc {
+		width: calc(100% - 30px) !important;
+		height: auto !important;
+	}
+
+	input, select, span {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.sc-checkbox_scc > input, .sc-checkbox_scc > span {
+		left: 0 !important;
+		transform: translateX(0%) !important;
+	}
+
+	.bc-selector_bcs:last-child {
+		margin-top: 10px;
+	}
+
+	body {
+		margin-bottom: 15px;
+	}
+}

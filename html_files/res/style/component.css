@@ -29,7 +29,7 @@
 }
 
 .wcpp-api_wcppa {
-	font-family: monospace;
+	font-family: var(--l-spacedfont);
 	font-weight: bold;
 }
 /* CSS3 compatibility */

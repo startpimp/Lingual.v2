@@ -22,7 +22,7 @@ input[name="types"], #ic-types_ict {
 }
 
 #ic-api_ica {
-	font-family: monospace;
+	font-family: var(--l-spacedfont);
 }
 
 .ic-sub_ics {
@@ -89,7 +89,7 @@ input[name="types"], #ic-types_ict {
 }
 
 .icpbaapp-pronunciation_icpbaappp {
-	font-family: monospace;
+	font-family: var(--l-spacedfont);
 	font-weight: bold;
 }
 
@@ -102,7 +102,7 @@ input[name="types"], #ic-types_ict {
 }
 
 input[name="pronunciation"] {
-	font-family: monospace;
+	font-family: var(--l-spacedfont);
 }
 
 #icbpa-error_icpbae {
@@ -118,5 +118,5 @@ input[name="pronunciation"] {
 #icbpa-error_icpbae > p {
 	display: inline-block;
 	color: var(--l-dark-red);
-	font-family: monospace;
+	font-family: var(--l-spacedfont);
 }

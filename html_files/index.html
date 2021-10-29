@@ -55,8 +55,8 @@
 	const W_WIDTH = document.querySelector("#headband_hb").offsetWidth
 	const H_HEIGHT = document.querySelector("#headband_hb").offsetHeight
 	const H_WIDTH = document.querySelector("#searchContainer_sc").offsetWidth
-	const D_HEIGHT = W_HEIGHT - H_HEIGHT - 30
-	const D_WIDTH = W_WIDTH - H_WIDTH - 15
+	const D_HEIGHT = Math.floor(W_HEIGHT - H_HEIGHT - 30)
+	const D_WIDTH = Math.floor(W_WIDTH - H_WIDTH - 15)
 	document.querySelector("#searchContainer_sc").style.height = `${D_HEIGHT}px`
 	document.querySelector("#cc_container").style.maxWidth = `${D_WIDTH}px`
 
