@@ -13,8 +13,8 @@
 	"component.text.translations": "億品",
 	"component.text.definitions": "定義",
 	"component.text.reading": "讀音：",
-	"component.text.and": "和",
-	"component.punctuation.comma": "和",
+	"component.text.and": " 和",
+	"component.punctuation.comma": " 和",
 	"component.text.remove": "刪除",
 
 	"add.word.title": "添加一个詞 – Lingual",
