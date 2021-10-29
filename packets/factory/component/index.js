@@ -47,7 +47,7 @@ async function run(req, res) {
 	main_page = main_page.replace("<?set:types?>", types_html)
 
 	// Reading
-	if(!COMPONENT.reading && COMPONENT.reading == "null") {
+	if(COMPONENT.reading && COMPONENT.reading != "null") {
 		main_page = main_page.replace("<?set:reading?>", await FACTORY.get("component.reading", "html", {
 			reading: COMPONENT.reading
 		}));
