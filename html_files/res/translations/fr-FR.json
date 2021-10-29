@@ -92,7 +92,10 @@
 	"component.type.indefinite-article": "article indéfini",
 	"component.type.pronoun": "pronom",
 	"component.type.cardinal-adjective": "adjectif cardinal",
-	"component.type.interjection": "interjection", 
+	"component.type.interjection": "interjection",
+	"component.type.common-noun": "nom commun",
+	"component.type.verb": "verbe",
+
 
 
 	"?comment": "Languages' translation",
