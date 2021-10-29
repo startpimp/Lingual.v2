@@ -131,7 +131,7 @@ async function start() {
 	const SERVER_INSTANCE = SERVER.createServer(HTTPS, APP)
 	SERVER.createListeners(SERVER_INSTANCE)
 	APP.listen(SERVER.PROPERTIES.port, () => {
-		console.log(`Server has start : https://${SERVER.PROPERTIES.ip}:${SERVER.PROPERTIES.port}`)
+		console.log(`Server has start : http://${SERVER.PROPERTIES.ip}:${SERVER.PROPERTIES.port}`)
 	});
 }
 
