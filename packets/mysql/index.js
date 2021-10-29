@@ -1,4 +1,4 @@
-const MYSQL = require("mysql")
+const MYSQL = require("promise-mysql")
 const FS = require("fs/promises")
 
 const POOL = MYSQL.createPool({
@@ -9,14 +9,12 @@ const POOL = MYSQL.createPool({
 });
 
 async function tryCreate(useACD) {
-	const CON = MYSQL.createConnection({
+	const CON = await MYSQL.createConnection({
 		host: "localhost",
 		user: "lingual_website",
 		password: "linSite2021",
 		multipleStatements: true
 	});
-
-	await CON.connect();
 
 	const PATH = useACD ? "./packets/mysql/exported.sql" : "./packets/mysql/lingual.sql"
 
@@ -27,16 +25,18 @@ async function tryCreate(useACD) {
 
 /* simplification */
 async function sql(request) {
-	return await new Promise((resolve, reject) => {
-		POOL.getConnection((err, connection) => {
-			if(err) reject(err);
-
-			connection.query(request, (err, result) => {
-				connection.release()
-				if(err) reject(err);
-				resolve(result);
-			});
-		});
+	return await new Promise(async (resolve, reject) => {
+		let PL = await POOL
+		let CON = await PL.getConnection()
+		
+		try {
+			const QUERY = await CON.query(request)
+			CON.release()
+			resolve(QUERY)
+		} catch(err) {
+			CON.release()
+			reject(err)
+		}
 	});
 }
 
@@ -97,7 +97,12 @@ async function addComponent(component, reading, language, types, pronunciations,
 	reading = reading ? reading : "null"
 	return await new Promise(async (resolve, reject) => {
 		const TYPE = JSON.parse(types)[0]
-		await sql(`INSERT INTO components(id, component, reading, language, types, pronunciations, translations, definitions) VALUES('${component.replace(/'/g, String.raw`\'`)}.${language}.${TYPE}', '${component.replace(/'/g, String.raw`\'`)}', '${reading.replace(/'/g, String.raw`\'`)}', '${language}', '${types.replace(/'/g, String.raw`\'`)}', '${pronunciations.replace(/'/g, String.raw`\'`)}', '${translations.replace(/'/g, String.raw`\'`)}', '${definitions.replace(/'/g, String.raw`\'`)}')`)
+		try {
+			await sql(`INSERT INTO components(id, component, reading, language, types, pronunciations, translations, definitions) VALUES('${component.replace(/'/g, String.raw`\'`)}.${language}.${TYPE}', '${component.replace(/'/g, String.raw`\'`)}', '${reading.replace(/'/g, String.raw`\'`)}', '${language}', '${types.replace(/'/g, String.raw`\'`)}', '${pronunciations.replace(/'/g, String.raw`\'`)}', '${translations.replace(/'/g, String.raw`\'`)}', '${definitions.replace(/'/g, String.raw`\'`)}')`)
+		} catch(err) {
+			resolve("EXISTS");
+			return;
+		}
 		const LANGUAGE = await getLanguage(language)
 		const CODE = LANGUAGE.code
 		const CHARS = LANGUAGE.chars

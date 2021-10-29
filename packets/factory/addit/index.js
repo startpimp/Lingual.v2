@@ -10,9 +10,7 @@ async function run(req, res) {
 	const HIDDEN_DEFINITIONS = req.query.definitions_hidden ? req.query.definitions_hidden : '{}'
 	const COMPONENT_CLASS = JSON.parse(HIDDEN_TYPES)[0]
 
-	try {
-		await MYSQL.addComponent(COMPONENT, READING, ORIGIN, HIDDEN_TYPES, HIDDEN_PRONUNCIATIONS, HIDDEN_TRANSLATIONS, HIDDEN_DEFINITIONS)
-	} catch(err) {}
+	await MYSQL.addComponent(COMPONENT, READING, ORIGIN, HIDDEN_TYPES, HIDDEN_PRONUNCIATIONS, HIDDEN_TRANSLATIONS, HIDDEN_DEFINITIONS)
 	res.redirect(`/component/${COMPONENT.replace(/\./g, "µ2e")}?l=${ORIGIN}&t=${COMPONENT_CLASS}`);
 }
 
