@@ -23,7 +23,13 @@ async function run(req, res) {
 	var main_page = await FS.readFile(__dirname + "../../../../html_files/component.html")
 	main_page = main_page.toString()
 
+	if(Q_TYPE == "word" || Q_TYPE == "char") {
+		main_page = main_page.replace("<?set:google-tips?>", await FACTORY.get("component.google-tips", "html"))
+	}
+
 	main_page = main_page.replace(/\$\(component\)/gm, COMPONENT.component)
+	main_page = main_page.replace(/\$\(gootra\)/gm, `https://translate.google.com/?sl=${COMPONENT.language.code}&tl=${LANGUAGE}&text=${COMPONENT.component}&op=translate`)
+	// main_page = main_page.replace(/\$\(component-length\)/gm, COMPONENT.component.length)
 	main_page = main_page.replace(/\$\(type\)/gm, COMPONENT.types[0])
 	main_page = main_page.replace(/\$\(typed-class\)/gm, COMPONENT.types[0] == "api" ? 'class="ty-api_tya"' : "")
 

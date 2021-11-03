@@ -3,7 +3,7 @@
 	"home.add-word": "添加一个词",
 	"home.add-char": "添加一个字符",
 	"home.add-punctuation": "添加一个標點符號",
-	"home.add-api": "添加一个拼音字",
+	"home.add-api": "添加一个音標字",
 	"home.text.search": "搜索",
 	"home.text.origin": "原來語言",
 	"home.text.class": "組件的類別",
@@ -16,6 +16,9 @@
 	"component.text.and": " 和",
 	"component.punctuation.comma": " 和",
 	"component.text.remove": "刪除",
+	"component.text.gootra": "Google翻譯",
+	"component.text.progoo": "Google的音標",
+	"component.text.unsupportedAudio": "你的互聯網瀏覽器不支持音頻。",
 
 	"add.word.title": "添加一个詞 – Lingual",
 	"add.word.minititle": "添加一个詞",
@@ -26,9 +29,9 @@
 	"add.punctuation.title": "添加一个標點符號 – Lingual",
 	"add.punctuation.minititle": "添加一个標點符號",
 	"add.text.punctuation": "標點符號添加",
-	"add.api.title": "添加一个拼音字 – Lingual",
-	"add.api.minititle": "添加一个拼音字",
-	"add.text.api": "拼音字添加",
+	"add.api.title": "添加一个音標字 – Lingual",
+	"add.api.minititle": "添加一个音標字",
+	"add.text.api": "音標字添加",
 	
 	"aec.cancel": "取消",
 	"aec.text.types": "其語法功能",
@@ -58,9 +61,9 @@
 	"edit.punctuation.title": "编辑標點符號 – Lingual",
 	"edit.punctuation.minititle": "编辑標點符號",
 	"edit.text.punctuation": "標點符號编辑",
-	"edit.api.title": "编辑拼音字 – Lingual",
-	"edit.api.minititle": "编辑拼音字",
-	"edit.text.api": "拼音字编辑",
+	"edit.api.title": "编辑音標字 – Lingual",
+	"edit.api.minititle": "编辑音標字",
+	"edit.text.api": "音標字编辑",
 
 	"ufc.title": "未找到",
 	"ufc.button.addit": "添加它",
@@ -69,7 +72,7 @@
 	"component.class.word": "詞",
 	"component.class.char": "字符",
 	"component.class.punctuation": "標點符號",
-	"component.class.api": "拼音字",
+	"component.class.api": "音標字",
 
 	"?comment": "Words' types",
 	"component.type.adjective": "形容詞",
@@ -99,6 +102,7 @@
 	"component.type.masculine-singular-common-noun": "陽性單數普通名詞",
 	"component.type.feminine-plural-common-noun": "陰性複數普通名詞",
 	"component.type.feminine-singular-common-noun": "陰性單數普通名詞",
+	"component.type.interjection": "感嘆詞",
 
 	"?comment": "Languages' translation",
 	"lang.all": "任何語言",
@@ -108,8 +112,8 @@
 	"lang.ja": "日語",
 	"lang.ko-KR": "韓語（韓國）",
 	"lang.ko-KP": "韓語（朝鮮）",
-	"lang.de-DE": "德語 (德國)",
+	"lang.de-DE": "德語（德國）",
 	"lang.zh-CN": "漢語（簡體中文）",
-	"lang.fr-CA": "法語 (加拿大)",
+	"lang.fr-CA": "法語（加拿大）",
 	"lang.zh-TW": "漢語（繁體中文）"
 }

@@ -65,6 +65,10 @@ APP.get('/addit', async (req, res) => {
 		await require("./packets/factory/addit/index.js")(req, res)
 });
 
+APP.get('/audio', async (req, res) => {
+	await require("./packets/factory/audio/index.js")(req, res)
+});
+
 APP.get('/editit', async (req, res) => {
 	await require("./packets/factory/editit/index.js")(req, res)
 });

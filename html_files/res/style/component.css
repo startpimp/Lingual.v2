@@ -99,7 +99,24 @@
 /* CSS2 compatibility */
 .octt-example_octte:before, .ocdd-example_ocdde:before {
 	content: '– ';
-	border: ;
+}
+
+#wc-googleTips_wcgt {
+	color: var(--l-middle-grey);
+}
+
+#wc-googleTips_wcgt > a {
+	color: var(--l-blue);
+	text-decoration: none;
+}
+
+#wc-googleTips_wcgt > a:hover {
+	text-decoration: underline;
+}
+
+audio {
+	margin: 15px 0;
+	display: block;
 }
 
 @media only screen and (max-width:  958px) {

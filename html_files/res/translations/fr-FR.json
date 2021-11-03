@@ -16,6 +16,9 @@
 	"component.text.and": " et ",
 	"component.punctuation.comma": ", ",
 	"component.text.remove": "Supprimer",
+	"component.text.gootra": "Google Traduction",
+	"component.text.progoo": "Prononciation Google",
+	"component.text.unsupportedAudio": "Votre explorateur ne supporte pas l'audio.",
 
 	"add.word.title": "Ajouter un mot – Lingual",
 	"add.word.minititle": "Ajouter un mot",
