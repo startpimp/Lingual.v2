@@ -10,7 +10,7 @@
 	"home.text.contains": "Contient ou est égale à :",
 
 	"component.button.home": "Accueil",
-	"component.text.translations": "Traduction",
+	"component.text.translations": "Traductions",
 	"component.text.definitions": "Définitions",
 	"component.text.reading": "Lecture : ",
 	"component.text.and": " et ",
@@ -19,6 +19,7 @@
 	"component.text.gootra": "Google Traduction",
 	"component.text.progoo": "Prononciation Google",
 	"component.text.unsupportedAudio": "Votre explorateur ne supporte pas l'audio.",
+	"component.text.synonyms": "Synonymes",
 
 	"add.word.title": "Ajouter un mot – Lingual",
 	"add.word.minititle": "Ajouter un mot",
@@ -49,8 +50,10 @@
 	"aec.text.addTranslation": "Ajouter une traduction",
 	"aec.text.addPronunciation": "Ajouter une prononciation",
 	"aec.text.addDefinition": "Ajouter une définition",
+	"aec.text.addSynonym": "Ajouter un synonyme",
 	"aec.text.error": "Le code de langue \\\"<?word?>\\\" n'existe pas !",
 	"aec.text.edit": "Éditer",
+	"aec.text.synonym": "Synonyme",
 
 	"edit.word.title": "Éditer un mot – Lingual",
 	"edit.word.minititle": "Éditer un mot",
@@ -65,7 +68,7 @@
 	"edit.api.minititle": "Éditer un caractère phonétique",
 	"edit.text.api": "Caractère phonétique à éditer",
 
-	"ufc.title": "introuvable",
+	"ufc.title": "Introuvable",
 	"ufc.button.addit": "L'ajouter",
 
 	"?comment": "Component's class",
@@ -78,9 +81,9 @@
 	"component.type.adjective": "adjectif",
 	"component.type.noun": "nom",
 	"component.type.feminine-noun": "nom féminin",
-	"component.type.singular-masculine-noun": "nom masculin singulier",
-	"component.type.singular-masculine-proper-noun": "nom prepre masculin singulier",
-	"component.type.plural-masculine-proper-noun": "nom propre masculin pluriel",
+	"component.type.masculine-singular-noun": "nom masculin singulier",
+	"component.type.masculine-singular-proper-noun": "nom prepre masculin singulier",
+	"component.type.masculine-plural-proper-noun": "nom propre masculin pluriel",
 	"component.type.personal-pronoun": "pronom personnel",
 	"component.type.transitive-verb": "verbe transitif",
 	"component.type.first-group-verb": "verbe du premier groupe",
@@ -89,16 +92,16 @@
 	"component.type.adverb": "adverbe",
 	"component.type.invariable-adjective": "adjectif invariable",
 	"component.type.third-singular-person-present-indicative": "verbe à la troisième personne du singulier au présent de l'indicatif",
-	"component.type.singular-masculine-adjective": "adjectif masculin singulier",
+	"component.type.masculine-singular-adjective": "adjectif masculin singulier",
 	"component.type.masculine-invariant-in-number-noun": "nom masculin invariable en nombre",
-	"component.type.singular-feminine-noun": "nom féminin singulier",
+	"component.type.feminine-singular-noun": "nom féminin singulier",
 	"component.type.indefinite-article": "article indéfini",
 	"component.type.pronoun": "pronom",
 	"component.type.cardinal-adjective": "adjectif cardinal",
 	"component.type.interjection": "interjection",
 	"component.type.common-noun": "nom commun",
 	"component.type.verb": "verbe",
-
+	"component.type.intransitive-verb": "verbe intransitif",
 
 
 	"?comment": "Languages' translation",
@@ -106,9 +109,11 @@
 	"lang.en-US": "Anglais (États-Unis)",
 	"lang.en-GB": "Anglais (Royaume Uni)",
 	"lang.fr-FR": "Français (France)",
+	"lang.fr-CA": "Français (Canada)",
 	"lang.ja": "Japonais",
 	"lang.ko-KR": "Coréen du Sud",
 	"lang.ko-KP": "Coréen du Nord",
 	"lang.de-DE": "Allemand (Allemagne)",
-	"lang.zh-CN": "Chinois Simplifié"
+	"lang.zh-CN": "Chinois Simplifié",
+	"lang.zh-TW": "Chinois Traditionnel"
 }

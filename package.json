@@ -16,7 +16,6 @@
     "ip": "^1.1.5",
     "mysql": "^2.18.1",
     "promise-mysql": "^5.0.4",
-    "socket.io": "^4.2.0",
-    "text-to-mp3": "^1.0.4"
+    "socket.io": "^4.2.0"
   }
 }

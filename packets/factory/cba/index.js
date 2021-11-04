@@ -38,11 +38,13 @@ async function run(req, res) {
 		hidden_definitions: "{}",
 		hidden_translations: "{}",
 		hidden_pronunciations: "[]",
+		hidden_synonyms: "[]",
 		reading: "",
 		component: Q_COMPONENT,
 		url: "./addit",
 		url2: "./",
 		page: "add",
+		language: Q_LANGUAGE,
 		type: Q_TYPE
 	});
 

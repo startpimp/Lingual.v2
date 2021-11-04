@@ -19,6 +19,7 @@
 	"component.text.gootra": "Google翻訳",
 	"component.text.progoo": "Googleの読み方",
 	"component.text.unsupportedAudio": "あなたのブラウザは音響を対応していません。",
+	"component.text.synonyms": "同義語",
 
 	"add.word.title": "言葉を追加 – Lingual",
 	"add.word.minititle": "言葉を追加",
@@ -49,8 +50,10 @@
 	"aec.text.addTranslation": "翻訳を追加",
 	"aec.text.addPronunciation": "読み方を追加",
 	"aec.text.addDefinition": "定義を追加",
+	"aec.text.addSynonym": "同義語を追加",
 	"aec.text.error": "「<?word?>」の言語のコードを存在しません！",
 	"aec.text.edit": "編集",
+	"aec.text.synonym": "同義語",
 
 	"edit.word.title": "言葉を編集 – Lingual",
 	"edit.word.minititle": "言葉を編集",
@@ -103,6 +106,7 @@
 	"component.type.feminine-plural-common-noun": "女性複数普通名詞",
 	"component.type.feminine-singular-common-noun": "女性単数普通名詞",
 	"component.type.interjection": "感嘆詞",
+	"component.type.intransitive-verb": "自動詞",
 
 	"?comment": "Languages' translation",
 	"lang.all": "すべての言語",

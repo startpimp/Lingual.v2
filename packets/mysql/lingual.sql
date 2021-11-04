@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `components`(
 	`pronunciations` TEXT NOT NULL, -- Array type
 	`translations` TEXT NOT NULL, -- JSON type
 	`definitions` TEXT NOT NULL, -- JSON Type
+	`synonyms` TEXT NOT NULL, -- Array Type
 	PRIMARY KEY (`id`)
 );
 

@@ -19,6 +19,7 @@
 	"component.text.gootra": "Google Translate",
 	"component.text.progoo": "Google's pronunciation",
 	"component.text.unsupportedAudio": "Your browser does not support the audio.",
+	"component.text.synonyms": "Synonyms",
 
 	"add.word.title": "Add a word – Lingual",
 	"add.word.minititle": "Add a word",
@@ -49,8 +50,10 @@
 	"aec.text.addTranslation": "Add a translation",
 	"aec.text.addPronunciation": "Add a pronunciation",
 	"aec.text.addDefinition": "Add a definition",
+	"aec.text.addSynonym": "Add a synonym",
 	"aec.text.error": "The language's code \\\"<?word?>\\\" does not exist!",
 	"aec.text.edit": "Edit",
+	"aec.text.synonym": "Synonym",
 
 	"edit.word.title": "Edit a word – Lingual",
 	"edit.word.minititle": "Edit a word",
@@ -103,6 +106,7 @@
 	"component.type.feminine-plural-common-noun": "feminine plural common noun",
 	"component.type.feminine-singular-common-noun": "feminine singular common noun",
 	"component.type.interjection": "interjection",
+	"component.type.intransitive-verb": "intransitive verb",
 
 	"?comment": "Languages' translation",
 	"lang.all": "All languages",

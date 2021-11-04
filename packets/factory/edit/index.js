@@ -11,6 +11,7 @@ async function run(req, res) {
 	const C_TYPES = COMPONENT.types
 	const C_DEFINITIONS = COMPONENT.definitions
 	const C_PRONUNCIATIONS = COMPONENT.pronunciations
+	const C_SYNONYMS = COMPONENT.synonyms
 	const C_TRANSLATIONS = COMPONENT.translations
 	const C_READING = COMPONENT.reading
 	const C_COMPONENT = COMPONENT.component
@@ -41,8 +42,8 @@ async function run(req, res) {
 	main_page = main_page.replace("<?set:codes?>", JSON.stringify(JSON_BASED))
 	main_page = main_page.replace("<?set:languages?>", languages_html)
 
-	// Known types
 	if(Q_TYPE == "word") {
+		// Known types
 		var types_html = ""
 		for(var index = 1; index < C_TYPES.length; index++) {
 			types_html += await FACTORY.get("aec.type", "html", {
@@ -50,6 +51,16 @@ async function run(req, res) {
 			});
 		}
 		main_page = main_page.replace("<?set:types?>", types_html)
+
+		// Known synonyms
+		var added_synonyms_html = ""
+		for(var index = 0; index < C_SYNONYMS.length; index++) {
+			added_synonyms_html += await FACTORY.get("aec.added-synonyms", "html", {
+				index,
+				synonym: C_SYNONYMS[index]
+			});
+		}
+		main_page = main_page.replace("<?set:added-synonyms?>", added_synonyms_html)
 	}
 
 	// Known pronunciations
@@ -103,11 +114,13 @@ async function run(req, res) {
 		hidden_definitions: JSON.stringify(C_DEFINITIONS),
 		hidden_translations: JSON.stringify(C_TRANSLATIONS),
 		hidden_pronunciations: JSON.stringify(C_PRONUNCIATIONS),
+		hidden_synonyms: JSON.stringify(C_SYNONYMS),
 		reading: C_READING == "null" ? "" : C_READING,
 		component: C_COMPONENT,
 		url: "./editit",
 		url2: `./component/${C_COMPONENT}?l=${C_LANGUAGE.code}&t=${C_TYPES[0]}`,
 		page: "edit",
+		language: C_LANGUAGE.code,
 		type: Q_TYPE
 	});
 

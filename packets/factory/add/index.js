@@ -36,11 +36,13 @@ async function run(req, res) {
 		hidden_definitions: "{}",
 		hidden_translations: "{}",
 		hidden_pronunciations: "[]",
+		hidden_synonyms: "[]",
 		reading: "",
 		component: "",
 		url: "./addit",
 		url2: "./",
 		page: "add",
+		language: LANGUAGE,
 		type: TYPE
 	});
 

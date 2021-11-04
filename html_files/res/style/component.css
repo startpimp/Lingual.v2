@@ -58,13 +58,17 @@
 	max-width: 700px;
 }
 
-#oc-translations_oct {
+#oc-translations_oct, #oc-definitions_ocd {
 	margin-bottom: 25px;
 }
 
-#oct-title_octt, #ocd-title_ocdt {
+#oct-title_octt, #ocd-title_ocdt, #ocs-title_ocst {
 	font-weight: bold;
 	font-size: 20px;
+}
+
+#ocs-title_ocst {
+	margin-bottom: 5px;
 }
 
 .oct-translation_octt, .ocd-definition_ocdd {
@@ -105,13 +109,31 @@
 	color: var(--l-middle-grey);
 }
 
-#wc-googleTips_wcgt > a {
+#wc-googleTips_wcgt > a, .ocs-synonym_ocss {
 	color: var(--l-blue);
 	text-decoration: none;
 }
 
-#wc-googleTips_wcgt > a:hover {
+#wc-googleTips_wcgt > a:hover, .ocs-synonym_ocss:hover {
 	text-decoration: underline;
+}
+
+.ocs-synonym_ocss {
+	display: block;
+	font-weight: bold;
+}
+
+.ocs-synonym_ocss::before {
+	content: '・ ';
+	color: black;
+	text-decoration: none !important;
+}
+
+/* CSS2 compatibility */
+.ocs-synonym_ocss:before {
+	content: '・ ';
+	color: black;
+	text-decoration: none !important;
 }
 
 audio {

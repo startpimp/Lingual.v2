@@ -114,6 +114,21 @@ async function run(req, res) {
 		if(ins_definitions_html != "") main_page = main_page.replace("<?set:definitions?>", DEFINITIONS_CONTAINER_HTML);
 	}
 
+	// Synonyms
+	if(COMPONENT.synonyms.length != 0) {
+		var ins_synonyms_html = ""
+		for(var index = 0; index < COMPONENT.synonyms.length; index++) {
+			ins_synonyms_html += await FACTORY.get("component.in-synonym", "html", {
+				language: COMPONENT.language.code,
+				component: COMPONENT.synonyms[index]
+			});
+		}
+		let SYNONYMS_CONTAINER_HTML = await FACTORY.get("component.synonyms-container", "html", {
+			synonyms: ins_synonyms_html
+		});
+		main_page = main_page.replace("<?set:synonyms?>", SYNONYMS_CONTAINER_HTML)
+	}
+
 	main_page = main_page.replace(/\$\(language\)/gm, COMPONENT.language.code)
 	main_page = main_page.replace(/\$\(user-language\)/gm, LANGUAGE)
 	res.end(LANG.translateFile(main_page, LANGUAGE))

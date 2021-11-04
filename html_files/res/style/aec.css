@@ -35,7 +35,7 @@ input[name="types"], #ic-types_ict {
 	margin-right: 25px;
 }
 
-.icbt-translation_icbtt, .icbaap-pronunciation_icpbaapp, .icbda-definition_icbdad {
+.icbt-translation_icbtt, .icbaap-pronunciation_icpbaapp, .icbda-definition_icbdad, .icbsaas-synonym_icbsaass {
 	display: block;
 	border-radius: 5px;
 	margin-bottom: 5px;
@@ -43,7 +43,7 @@ input[name="types"], #ic-types_ict {
 	cursor: pointer;
 }
 
-.icbt-translation_icbtt:hover, .icbaap-pronunciation_icpbaapp:hover, .icbda-definition_icbdad:hover {
+.icbt-translation_icbtt:hover, .icbaap-pronunciation_icpbaapp:hover, .icbda-definition_icbdad:hover, .icbsaas-synonym_icbsaass:hover {
 	background-color: var(--l-grey);
 }
 
@@ -119,4 +119,14 @@ input[name="pronunciation"] {
 	display: inline-block;
 	color: var(--l-dark-red);
 	font-family: var(--l-spacedfont);
+}
+
+.icpbsaass-synonym_icpbsaasss {
+	color: var(--l-blue);
+	font-weight: bold;
+}
+
+.icpbsaass-synonym_icpbsaasss::before {
+	content: '・ ';
+	color: black;
 }

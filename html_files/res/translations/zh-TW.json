@@ -19,6 +19,7 @@
 	"component.text.gootra": "Google翻譯",
 	"component.text.progoo": "Google的音標",
 	"component.text.unsupportedAudio": "你的互聯網瀏覽器不支持音頻。",
+	"component.text.synonyms": "同義詞",
 
 	"add.word.title": "添加一个詞 – Lingual",
 	"add.word.minititle": "添加一个詞",
@@ -49,8 +50,10 @@
 	"aec.text.addTranslation": "添加億品",
 	"aec.text.addPronunciation": "添加讀音",
 	"aec.text.addDefinition": "添加定義",
+	"aec.text.addSynonym": "添加同義詞",
 	"aec.text.error": "語言代碼《<?word?>》並不存在！",
 	"aec.text.edit": "编辑",
+	"aec.text.synonym": "同義詞",
 
 	"edit.word.title": "编辑詞 – Lingual",
 	"edit.word.minititle": "编辑詞",
@@ -103,6 +106,7 @@
 	"component.type.feminine-plural-common-noun": "陰性複數普通名詞",
 	"component.type.feminine-singular-common-noun": "陰性單數普通名詞",
 	"component.type.interjection": "感嘆詞",
+	"component.type.intransitive-verb": "不及物動詞",
 
 	"?comment": "Languages' translation",
 	"lang.all": "任何語言",
