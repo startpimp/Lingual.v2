@@ -139,6 +139,16 @@ audio {
 	display: block;
 }
 
+#oc-antonyms_oca, #oc-synonyms_ocs {
+	display: inline-block;
+	padding: 7.5px;
+	padding-bottom: unset;
+	vertical-align: top;
+	border: 0.5px solid var(--l-middle-grey);
+	border-bottom: none;
+	font-size: initial;
+}
+
 @media only screen and (max-width:  958px) {
 	#otherContainer_oc {
 		min-width: 0;

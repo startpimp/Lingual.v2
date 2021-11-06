@@ -103,3 +103,7 @@ button:hover {
 	background-color: var(--l-middle-hover-grey);
 	border: 1px solid var(--l-dark-grey);
 }
+
+.inline-transform {
+	font-size: 0;
+}
