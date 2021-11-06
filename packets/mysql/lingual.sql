@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `components`(
 	`translations` TEXT NOT NULL, -- JSON type
 	`definitions` TEXT NOT NULL, -- JSON Type
 	`synonyms` TEXT NOT NULL, -- Array Type
+	`antonyms` TEXT NOT NULL, -- Array Type
 	PRIMARY KEY (`id`)
 );
 
@@ -20,11 +21,4 @@ CREATE TABLE IF NOT EXISTS `languages`(
 	`api` TEXT NOT NULL, -- Array type
 	`types` TEXT NOT NULL, -- Array type
 	PRIMARY KEY (`code`)
-);
-
-CREATE TABLE IF NOT EXISTS `links`(
-	`link` VARCHAR(512) NOT NULL, -- String type
-	`language` VARCHAR(6) CHARACTER SET ascii COLLATE ascii_bin DEFAULT 'en-US',
-	`pronunciations` TEXT NOT NULL, -- Array type
-	PRIMARY KEY (`link`) 
 );

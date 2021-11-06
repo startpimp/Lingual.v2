@@ -20,6 +20,7 @@
 	"component.text.progoo": "Google's pronunciation",
 	"component.text.unsupportedAudio": "Your browser does not support the audio.",
 	"component.text.synonyms": "Synonyms",
+	"component.text.antonyms": "Antonyms",
 
 	"add.word.title": "Add a word – Lingual",
 	"add.word.minititle": "Add a word",
@@ -51,9 +52,11 @@
 	"aec.text.addPronunciation": "Add a pronunciation",
 	"aec.text.addDefinition": "Add a definition",
 	"aec.text.addSynonym": "Add a synonym",
+	"aec.text.addAntonym": "Add an antonym",
 	"aec.text.error": "The language's code \\\"<?word?>\\\" does not exist!",
 	"aec.text.edit": "Edit",
 	"aec.text.synonym": "Synonym",
+	"aec.text.antonym": "Antonym",
 
 	"edit.word.title": "Edit a word – Lingual",
 	"edit.word.minititle": "Edit a word",

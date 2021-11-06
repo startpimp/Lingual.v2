@@ -129,6 +129,21 @@ async function run(req, res) {
 		main_page = main_page.replace("<?set:synonyms?>", SYNONYMS_CONTAINER_HTML)
 	}
 
+	// Synonyms
+	if(COMPONENT.antonyms.length != 0) {
+		var ins_antonyms_html = ""
+		for(var index = 0; index < COMPONENT.antonyms.length; index++) {
+			ins_antonyms_html += await FACTORY.get("component.in-antonym", "html", {
+				language: COMPONENT.language.code,
+				component: COMPONENT.antonyms[index]
+			});
+		}
+		let ANTONYMS_CONTAINER_HTML = await FACTORY.get("component.antonyms-container", "html", {
+			antonyms: ins_antonyms_html
+		});
+		main_page = main_page.replace("<?set:antonyms?>", ANTONYMS_CONTAINER_HTML)
+	}
+
 	main_page = main_page.replace(/\$\(language\)/gm, COMPONENT.language.code)
 	main_page = main_page.replace(/\$\(user-language\)/gm, LANGUAGE)
 	res.end(LANG.translateFile(main_page, LANGUAGE))

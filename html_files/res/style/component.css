@@ -62,12 +62,12 @@
 	margin-bottom: 25px;
 }
 
-#oct-title_octt, #ocd-title_ocdt, #ocs-title_ocst {
+#oct-title_octt, #ocd-title_ocdt, #ocs-title_ocst, #oca-title_ocat {
 	font-weight: bold;
 	font-size: 20px;
 }
 
-#ocs-title_ocst {
+#ocs-title_ocst, #oca-title_ocat {
 	margin-bottom: 5px;
 }
 
@@ -109,31 +109,29 @@
 	color: var(--l-middle-grey);
 }
 
-#wc-googleTips_wcgt > a, .ocs-synonym_ocss {
+#wc-googleTips_wcgt > a, .ocs-synonym_ocss, .oca-antonym_ocaa {
 	color: var(--l-blue);
 	text-decoration: none;
 }
 
-#wc-googleTips_wcgt > a:hover, .ocs-synonym_ocss:hover {
+#wc-googleTips_wcgt > a:hover, .ocs-synonym_ocss:hover, .oca-antonym_ocaa:hover {
 	text-decoration: underline;
 }
 
-.ocs-synonym_ocss {
+.ocs-synonym_ocss, .oca-antonym_ocaa {
 	display: block;
 	font-weight: bold;
 }
 
-.ocs-synonym_ocss::before {
+.ocs-synonym_ocss::before, .oca-antonym_ocaa::before {
 	content: '・ ';
 	color: black;
-	text-decoration: none !important;
 }
 
 /* CSS2 compatibility */
-.ocs-synonym_ocss:before {
+.ocs-synonym_ocss:before, .oca-antonym_ocaa:before {
 	content: '・ ';
 	color: black;
-	text-decoration: none !important;
 }
 
 audio {

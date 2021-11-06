@@ -39,6 +39,7 @@ async function run(req, res) {
 		hidden_translations: "{}",
 		hidden_pronunciations: "[]",
 		hidden_synonyms: "[]",
+		hidden_antonyms: "[]",
 		reading: "",
 		component: Q_COMPONENT,
 		url: "./addit",

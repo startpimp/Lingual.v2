@@ -24,10 +24,12 @@ async function AECTyped(content, type) {
 	let HIDDEN_TRANSLATIONS = await get("aec.hidden-translations", "html")
 	let HIDDEN_PRONUNCIATIONS = await get("aec.hidden-pronunciations", "html")
 	let HIDDEN_SYNONYMS = await get("aec.hidden-synonyms", "html")
+	let HIDDEN_ANTONYMS = await get("aec.hidden-antonyms", "html")
 	
 	if(type == "word" || type == "punctuation" || type == "char") content = content.replace("<?set:hidden-definitions?>", HIDDEN_DEFINITIONS);
 	if(type == "word") content = content.replace("<?set:hidden-translations?>", HIDDEN_TRANSLATIONS);
 	if(type == "word") content = content.replace("<?set:hidden-synonyms?>", HIDDEN_SYNONYMS);
+	if(type == "word") content = content.replace("<?set:hidden-antonyms?>", HIDDEN_ANTONYMS);
 	if(type == "word" || type == "char") content = content.replace("<?set:hidden-pronunciations?>", HIDDEN_PRONUNCIATIONS);
 
 	// Multiboxes
@@ -35,21 +37,25 @@ async function AECTyped(content, type) {
 	let TRANSLATIONS_BASED = await get("aec.translations-based", "html")
 	let DEFINITIONS_BASED = await get("aec.definitions-based", "html")
 	let SYNONYMS_BASED = await get("aec.synonyms-based", "html")
+	let ANTONYMS_BASED = await get("aec.antonyms-based", "html")
 
 	if(type == "word" || type == "char") content = content.replace("<?set:pronunciations-based?>", PRONUNCIATIONS_BASED);
 	if(type == "word") content = content.replace("<?set:translations-based?>", TRANSLATIONS_BASED);
 	if(type == "word") content = content.replace("<?set:synonyms-based?>", SYNONYMS_BASED);
+	if(type == "word") content = content.replace("<?set:antonyms-based?>", ANTONYMS_BASED);
 	if(type == "word" || type == "punctuation" || type == "char") content = content.replace("<?set:definitions-based?>", DEFINITIONS_BASED);
 
 	// JavaScript codes
 	let TYPES_JS = (type == "word") ? await get("aec.types", "js") : ""
 	let SYNONYMS_JS = (type == "word") ? await get("aec.synonyms", "js") : ""
+	let ANTONYMS_JS = (type == "word") ? await get("aec.antonyms", "js") : ""
 	let TRANSLATIONS_JS = (type == "word") ? await get("aec.translations", "js") : ""
 	let DEFINITIONS_JS = (type == "word" || type == "punctuation" || type == "char") ? await get("aec.definitions", "js") : ""
 	let PRONUNCIATIONS_JS = (type == "word" || type == "char") ? await get("aec.pronunciations", "js") : ""
 
 	content = content.replace("<?set:js-types?>", TYPES_JS);
 	content = content.replace("<?set:js-synonyms?>", SYNONYMS_JS);
+	content = content.replace("<?set:js-antonyms?>", ANTONYMS_JS);
 	content = content.replace("<?set:js-translations?>", TRANSLATIONS_JS);
 	content = content.replace("<?set:js-definitions?>", DEFINITIONS_JS);
 	content = content.replace("<?set:js-pronunciations?>", PRONUNCIATIONS_JS);

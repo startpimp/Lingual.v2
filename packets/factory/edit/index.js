@@ -12,6 +12,7 @@ async function run(req, res) {
 	const C_DEFINITIONS = COMPONENT.definitions
 	const C_PRONUNCIATIONS = COMPONENT.pronunciations
 	const C_SYNONYMS = COMPONENT.synonyms
+	const C_ANTONYMS = COMPONENT.antonyms
 	const C_TRANSLATIONS = COMPONENT.translations
 	const C_READING = COMPONENT.reading
 	const C_COMPONENT = COMPONENT.component
@@ -61,6 +62,16 @@ async function run(req, res) {
 			});
 		}
 		main_page = main_page.replace("<?set:added-synonyms?>", added_synonyms_html)
+
+		// Known antonyms
+		var added_antonyms_html = ""
+		for(var index = 0; index < C_ANTONYMS.length; index++) {
+			added_antonyms_html += await FACTORY.get("aec.added-antonyms", "html", {
+				index,
+				antonym: C_ANTONYMS[index]
+			});
+		}
+		main_page = main_page.replace("<?set:added-antonyms?>", added_antonyms_html)
 	}
 
 	// Known pronunciations
@@ -115,6 +126,7 @@ async function run(req, res) {
 		hidden_translations: JSON.stringify(C_TRANSLATIONS),
 		hidden_pronunciations: JSON.stringify(C_PRONUNCIATIONS),
 		hidden_synonyms: JSON.stringify(C_SYNONYMS),
+		hidden_antonyms: JSON.stringify(C_ANTONYMS),
 		reading: C_READING == "null" ? "" : C_READING,
 		component: C_COMPONENT,
 		url: "./editit",

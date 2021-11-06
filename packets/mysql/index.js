@@ -54,7 +54,7 @@ class Language {
 }
 
 class Component {
-	constructor(component, reading, language, types, pronunciations, translations, definitions, synonyms) {
+	constructor(component, reading, language, types, pronunciations, translations, definitions, synonyms, antonyms) {
 		this.component 		= component
 		this.reading 		= reading
 		this.language 		= language
@@ -63,15 +63,16 @@ class Component {
 		this.translations 	= translations
 		this.definitions 	= definitions
 		this.synonyms	 	= synonyms
+		this.antonyms	 	= antonyms
 	}
 }
 
-async function addComponent(component, reading, language, types, pronunciations, translations, definitions, synonyms) {
+async function addComponent(component, reading, language, types, pronunciations, translations, definitions, synonyms, antonyms) {
 	reading = reading ? reading : "null"
 	return await new Promise(async (resolve, reject) => {
 		const TYPE = JSON.parse(types)[0]
 		try {
-			await sql(`INSERT INTO components(id, component, reading, language, types, pronunciations, translations, definitions, synonyms) VALUES(
+			await sql(`INSERT INTO components(id, component, reading, language, types, pronunciations, translations, definitions, synonyms, antonyms) VALUES(
 				'${component.replace(/'/g, String.raw`\'`)}.${language}.${TYPE}',
 				'${component.replace(/'/g, String.raw`\'`)}',
 				'${reading.replace(/'/g, String.raw`\'`)}',
@@ -79,7 +80,8 @@ async function addComponent(component, reading, language, types, pronunciations,
 				'${pronunciations.replace(/'/g, String.raw`\'`)}',
 				'${translations.replace(/'/g, String.raw`\'`)}',
 				'${definitions.replace(/'/g, String.raw`\'`)}',
-				'${synonyms.replace(/'/g, String.raw`\'`)}')`)
+				'${synonyms.replace(/'/g, String.raw`\'`)}',
+				'${antonyms.replace(/'/g, String.raw`\'`)}')`)
 		} catch(err) {
 			resolve("EXISTS");
 			return;
@@ -101,7 +103,7 @@ async function addComponent(component, reading, language, types, pronunciations,
 	});
 }
 
-async function editComponent(originComponent, originLanguage, originType, component, reading, language, types, pronunciations, translations, definitions, synonyms) {
+async function editComponent(originComponent, originLanguage, originType, component, reading, language, types, pronunciations, translations, definitions, synonyms, antonyms) {
 	reading = reading ? reading : "null"
 	return await new Promise((resolve, reject) => {
 		sql(`UPDATE components SET 
@@ -113,7 +115,8 @@ async function editComponent(originComponent, originLanguage, originType, compon
 				pronunciations='${pronunciations.replace(/'/g, String.raw`\'`)}',
 				translations='${translations.replace(/'/g, String.raw`\'`)}',
 				definitions='${definitions.replace(/'/g, String.raw`\'`)}',
-				synonyms='${synonyms.replace(/'/g, String.raw`\'`)}' 
+				synonyms='${synonyms.replace(/'/g, String.raw`\'`)}',
+				antonyms='${antonyms.replace(/'/g, String.raw`\'`)}'
 				WHERE ${CONDITION_KEY(originComponent.replace(/'/g, String.raw`\'`), originLanguage, originType)}`).then(() => {
 			resolve()
 		}).catch(err => reject(err));
@@ -141,7 +144,8 @@ async function getComponent(component, language, type) {
 			const TRANSLATIONS = JSON.parse(PACKET.translations)
 			const DEFINITIONS = JSON.parse(PACKET.definitions)
 			const SYNONYMS = JSON.parse(PACKET.synonyms)
-			resolve(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS));
+			const ANTONYMS = JSON.parse(PACKET.antonyms)
+			resolve(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS, ANTONYMS));
 		}).catch(err => reject(err));
 	});
 }
@@ -162,7 +166,8 @@ async function getAllComponents(language, offset) {
 				const TRANSLATIONS = JSON.parse(PACKET.translations)
 				const DEFINITIONS = JSON.parse(PACKET.definitions)
 				const SYNONYMS = JSON.parse(PACKET.synonyms)
-				COMPONENTS.push(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS))
+				const ANTONYMS = JSON.parse(PACKET.antonyms)
+				COMPONENTS.push(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS, ANTONYMS))
 			}
 			resolve(COMPONENTS);
 		}).catch(err => reject(err));
@@ -183,7 +188,8 @@ async function getAllComponentsBySQL(command) {
 				const TRANSLATIONS = JSON.parse(PACKET.translations)
 				const DEFINITIONS = JSON.parse(PACKET.definitions)
 				const SYNONYMS = JSON.parse(PACKET.synonyms)
-				COMPONENTS.push(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS))
+				const ANTONYMS = JSON.parse(PACKET.antonyms)
+				COMPONENTS.push(new Component(COMPONENT, READING, LANGUAGE, TYPES, PRONUNCIATIONS, TRANSLATIONS, DEFINITIONS, SYNONYMS, ANTONYMS))
 			}
 			resolve(COMPONENTS);
 		}).catch(err => reject(err));
