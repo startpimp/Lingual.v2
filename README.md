@@ -2,7 +2,7 @@
  
 Lingual is a complexe dictionary where you can have some informations about a component.
 
-To make the site work, you should download [MySQL Workbench](https://dev.mysql.com/downloads/installer/) (follow [these steps](./#install-mysql) to install MySQL) and run the command `npm update` from the project's root.
+To make the site work, you should download [MySQL Workbench](https://dev.mysql.com/downloads/installer/) (follow [these steps](https://github.com/startpimp/Lingual.v2/#install-mysql) to install MySQL) and run the command `npm update` from the project's root.
 
 When this is done, modify credentials inside `./packets/mysql/index.js`.
 
